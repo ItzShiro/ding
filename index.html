@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ding Ding</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            animation: spin 2s infinite linear;
+        }
+        @keyframes spin{
+            0%{
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            0%{
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <img src="ding.png" alt="Ding Ding" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); height: 100%;">
+    <img src="ding.png" alt="Ding Ding">
 </body>
+
 </html>
