@@ -1,0 +1,28 @@
+body{
+    overflow: hidden;
+}
+img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    animation: spin 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+}
+@keyframes spin{
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    0%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@-webkit-keyframes spin{
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    0%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
