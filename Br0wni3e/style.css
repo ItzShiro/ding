@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+:root {
+  /* I want to make var color but not now :3 */
+  --hcolor: black;
+  --main: white;
+  --transition: 0.3s cubic-bezier(0.85, 0.06, 0.39, 0.88);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: roboto;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: black;
+  color: white;
+  height: calc(100vh - 50px);
+  overflow-x: hidden;
+}
+
+.logo {
+  margin: 20px;
+  display: flex;
+  filter: grayscale(1);
+}
+
+.logo h1 {
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.logo img {
+  width: 43px;
+  margin-top: -6px;
+}
+
+.absolute {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.top {
+  top: 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.center {
+  left: 50%;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+}
+
+nav ul {
+  display: flex;
+  transition: 0.3s;
+  z-index: 99;
+  position: fixed;
+  right: 25px;
+  top: 0;
+}
+
+nav ul>li {
+  margin: 25px;
+  list-style: none;
+}
+
+nav ul>li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.2s;
+  border-bottom: 1px transparent solid;
+}
+
+nav ul>li a:hover {
+  color: #ccc;
+  border-bottom: 1px white solid;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 100%;
+  text-align: right;
+}
+
+.heading h1 span {
+  opacity: 0.2;
+  position: relative;
+  color: red;
+}
+
+.text {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ttext {
+  position: absolute;
+  overflow: hidden;
+  top: 4.7rem;
+}
+
+.ttext div {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: black;
+  position: absolute;
+  top: 0px;
+  right: -100%;
+  animation: typing 1s steps(17);
+}
+
+.ttext2 {
+  top: 4rem;
+}
+
+.ttext2 span {
+  color: red;
+  filter: grayscale(0);
+  font-weight: 900;
+}
+
+.ttext2 div {
+  animation: typing 1.5s steps(18);
+}
+
+@keyframes typing {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+.loader {
+  display: flex;
+  width: 80px;
+  height: 60px;
+  justify-content: space-between;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: black;
+  z-index: 999;
+  top: 0;
+}
+
+.loader>div {
+  width: 12px;
+  height: 70px;
+  background-color: white;
+}
+
+.loader-line1, .loader-line2, .loader-line3, .loader-line4, .loader-line5 {
+  animation: loader-line 1s infinite ease-in-out;
+}
+
+.loader-line1 {
+  animation-delay: 0s;
+}
+
+.loader-line2 {
+  animation-delay: 0.2s;
+}
+
+.loader-line3 {
+  animation-delay: 0.4s;
+}
+
+.loader-line4 {
+  animation-delay: 0.6s;
+}
+
+.loader-line5 {
+  animation-delay: 0.8s;
+}
+
+@keyframes loader-line {
+  0% {
+    margin-top: 0px;
+    height: 70px;
+  }
+  50% {
+    margin-top: 15px;
+    height: 40px;
+  }
+  100% {
+    height: 70px;
+  }
+}
+
+.burger {
+  width: 60px;
+  height: 50px;
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 998;
+  transition: 0.2s;
+  display: none;
+}
+
+.line {
+  width: 50px;
+  height: 4px;
+  background: white;
+  margin-top: 11px;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0.44, 0.07, 0.32, 0.96);
+}
+
+.line1 {
+  width: 30px;
+  margin-left: 20px;
+  margin-top: 0;
+  transition-delay: 0.1s;
+}
+
+.line3 {
+  transform: rotate(45deg) translatex(-160%);
+  margin-top: 2px;
+}
+
+.line4 {
+  transform: rotate(-45deg) translatex(160%);
+  margin-top: -5px;
+}
+
+.lines34 {
+  transform: translatey(-4px);
+}
+
+.burger-active>.lines34>.line3 {
+  transform: rotate(45deg) translatex(0);
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+
+.burger-active>.lines34>.line4 {
+  transform: rotate(-45deg) translatex(0);
+  transition-delay: 0.3s;
+}
+
+.burger-active>.line1, .burger-active>.line2 {
+  transform: translatex(110%);
+  opacity: 0;
+}
+
+.body-mobile nav ul li {
+  margin: 35px;
+}
+
+.body-mobile nav ul {
+  position: fixed;
+  width: 100%;
+  height: 120vh;
+  background: #0a0a0a;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  text-align: center;
+  padding-right: 20px;
+  padding-top: 50px;
+}
+
+.body-mobile nav ul.active {
+  right: 0px;
+}
+
+.body-mobile nav ul li a {
+  font-size: 1.5rem;
+}
+
+.body-mobile .burger {
+  display: block;
+}
+
+.body-mobile .text {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  nav ul li {
+    margin: 35px;
+  }
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 120vh;
+    background: #0a0a0a;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    text-align: center;
+    padding-right: 20px;
+    padding-top: 50px;
+  }
+  nav ul.active {
+    right: 0px;
+  }
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+  .burger {
+    display: block;
+  }
+  .text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    width: 100%;
+    right: -690px;
+    text-align: center;
+  }
+  nav ul.active {
+    right: 0%;
+  }
+}
+
+@media (max-width: 400px) {
+  .text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .text {
+    font-size: 1.3rem;
+  }
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+#about .heading, #donations .heading {
+  width: 80%;
+}
+
+#donations p {
+  font-size: 1.5rem;
+}
+
+#contact .content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+}
+
+span.s::before {
+  content: "$";
+}
+
+span.s:hover::before {
+  content: "S";
+}
+
+span.h::before {
+  content: "&";
+}
+
+span.h:hover::before {
+  content: "H";
+}
+
+span.i::before {
+  content: "@";
+}
+
+span.i:hover::before {
+  content: "I";
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+span.t::before {
+  content: "#";
+}
+
+span.t:hover::before {
+  content: "T";
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: #0f0f0f;
+  position: relative;
+}
+
+footer .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+html .indicator, body .indicator {
+  position: fixed;
+  display: block;
+  background-color: #D6D35D;
+  height: 5px;
+  top: 0;
+}
+.logo-link{
+  text-decoration: none;
+  color: white;
+}
