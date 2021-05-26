@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="PL">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+  </style>
+</head>
+
+<body onload="onStart();">
+  <div class="card-absolute">
+    <div class="card">
+      <div class="card-mobile">
+        <div class="main-controls">
+          <img src="https://f4.bcbits.com/img/a1739903696_5.jpg" alt="">
+          <div class="time">
+            <div id="timeLine" class="line"></div>
+            <div class="ball"></div>
+            <span id="currTime">00:00</span><span> /</span>
+            <span id="durationTime">00:00</span>
+            <div class="playPauseBtn">
+              <button class="playPauseButton" onclick="playPause()">
+                <div class="triangle"></div>
+              </button>
+            </div>
+          </div>
+          <div class="loopIcon" onclick="loopIcon()">
+            <img src="https://image.flaticon.com/icons/png/512/32/32277.png" alt="loop-icon">
+            <div class="Loopline"></div>
+          </div>
+        </div>
+        <div class="volume-thing">
+          <div class="content">
+            <div class="div">
+              <input type="range" id="volume" min="0" max="100">
+            </div>
+
+            <div class="volIcon">
+              <div class="line line1"></div>
+              <div class="line line2"></div>
+              <div class="line line3"></div>
+              <div class="line line4"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <audio id="player" ontimeupdate='updateTrackTime(this);'>
+    <source src="thisishome_cavetown.mp3" type="audio/mpeg">
+    Sorry, but your browser does not support Audio in html, Update your browser or just download better one
+
+  </audio>
+
+
+  <span id="volumeValChangedTest" style="display: none;">0</span>
+
+
+  <!--NON-COPYRIGHT-->
+  <!--LICENSE: IDFCPL-->
+  <!--LINK: https://github.com/ItzShittyPaper/IDFCPL-->
+  <!--Cuz i dont fucking care-->
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

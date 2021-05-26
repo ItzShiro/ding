@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+  outline: none;
+}
+
+body{
+  background-color: #1e1d1e;
+  width: 100%;
+  height: 100vh;
+}
+
+.content {
+  width: 100%;
+  height: 23px;
+  display: flex;
+}
+.content .div input[type=range] {
+  -webkit-appearance: none;
+}
+.content .div input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #000;
+  cursor: pointer;
+  margin-top: -6px;
+}
+.content .div input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: black;
+  border-radius: 5px;
+  border: 0.2px solid #010101;
+}
+
+.volIcon {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+.volIcon .line {
+  transition: 0.2s ease-in-out;
+  width: 3px;
+  height: 20px;
+  background: black;
+  margin-right: 3px;
+  border-radius: 20px;
+}
+.volIcon .line1 {
+  margin-left: -2px;
+  height: 5px;
+  width: 5px;
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+  background: black;
+}
+.volIcon .line2 {
+  height: 15px;
+}
+.volIcon .line3 {
+  height: 20px;
+}
+.volIcon .line4 {
+  height: 25px;
+}
+.card-absolute{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-70%);
+}
+.card {
+  width: 400px;
+  height: 500px;
+  position: relative;
+  background-color: white;
+}
+body.mobileTrue .card-mobile{
+  width: 100%;
+  height: 100%;
+}
+body.mobileTrue .card{
+  width: 100%;
+  height: 100vh;
+}
+body.mobileTrue .main-controls{
+  margin-left: calc(50% - 200px);
+}
+.main-controls{
+  z-index: 2;
+}
+.main-controls img{
+  z-index: 2;
+}
+body.mobileTrue .card-absolute{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  transform: translate(0%,0%);
+  top: 0%;
+  left: 0%;
+}
+
+.card img {
+  width: 350px;
+  margin: 25px;
+}
+
+.volume-thing {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+
+.time {
+  width: 350px;
+  margin-left: calc(25px - 8px );
+  position: relative;
+  z-index: 100;
+}
+.time .line {
+  width: calc(100% + 15px);
+  height: 20px;
+  border-radius: 5px;
+  margin-top: -10px;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+.time .line::before{
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100%;
+  background: black;
+  border-radius: 5px;
+  position: absolute;
+  top: calc(50% - 2.5px);
+  pointer-events: none;
+}
+.time .ball {
+  width: 15px;
+  height: 15px;
+  background: black;
+  border-radius: 50px;
+  margin-left: calc(0% - 15px);
+  z-index: 100;
+  position: absolute;
+  top: calc(15px / 2 / 2 - 0.5px);
+  transition: 0.1s;
+}
+
+.playPauseButton{
+  width: 30px;
+  height: 30px;
+  position: relative;  
+  transition: 0.3s cubic-bezier(.64,.05,.16,.7);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.playPauseBtn{
+  position: absolute;
+  left: 50%;
+  transform: translate(-15%,-10px);
+}
+.playPauseButton .triangle{
+  content:"";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 30px;
+  border-color: transparent transparent transparent black;
+  margin-top: -2px;
+  margin-left: 0px;
+  transition: 0.3s cubic-bezier(.64,.05,.16,.7);
+  transition-delay: 0.2s;
+}
+
+.playPauseButton.active .triangle{
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.playPauseButton::before{
+  content:"";
+  display: block;
+  position: absolute;
+  top: 0;
+  margin-top: -2px;
+  margin-left: -2px;
+  width: 11px;
+  left: 0;
+  height: 30px;
+  background: black;
+  transition: 0.3s cubic-bezier(.64,.05,.16,.7);
+  opacity: 0;
+}
+.playPauseButton.active::before{
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.playPauseButton::after{
+  content:"";
+  display: block;
+  position: absolute;
+  top: 0;
+  margin-top: -2px;
+  width: 11px;
+  right: 0;
+  height: 30px;
+  background: black;
+  transition: 0.3s cubic-bezier(.64,.05,.16,.7);
+  opacity: 0;
+}
+.playPauseButton.active::after{
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.gline{
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+}
+.gline2{
+  width: 3px;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  transform: translateZ(-50%);
+}
+
+.loopIcon{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  position: fixed;
+  right: 90px;
+  top: 78%;
+  cursor: pointer;
+}
+.loopIcon img{
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+  transition: 0.3s cubic-bezier(.64,.05,.16,.7);
+  position: absolute;
+}
+
+
+.Loopline{
+  width: 50px;
+  height: 4px;
+  background: black; 
+  border-radius: 3px;
+  position: fixed;
+  bottom: 11.5%;
+  right: 59px;
+  transform: rotate(25deg) translateX(-3px);
+  transition: 0.3s cubic-bezier(.64,.05,.16,.7);
+}
+.loopIcon.active > img{
+  opacity: 1; 
+}
+.loopIcon.active > .Loopline{
+  opacity: 0; 
+}
+
+body.mobileTrue .loopIcon img{
+  position: fixed;
+  bottom: 3%;
+}
+
+body.mobileTrue .Loopline{
+  display: none;
+}
+/*LICENSE: IDFCPL*/
+/*LINK: https://github.com/ItzShittyPaper/IDFCPL*/
+/*Cuz i dont fucking care*/
