@@ -83,8 +83,8 @@ setInterval(function () {
 
   if (Android) {
     document.body.classList.add('mobileTrue');
-    if(screen.availHeight > screen.availWidth){
-      alert("Please use Landscape!(CUZ IM TOO LAZY TO REPAIR THIS SHIT K?)");
+    if(screen.availWidth > screen.availHeight ){
+      alert("Please use Turn your phone!(CUZ IM TOO LAZY TO REPAIR THIS SHIT K?)");
     }
   }
   
