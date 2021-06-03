@@ -81,6 +81,13 @@ setInterval(function () {
     player.loop = false;
   }
 
+  if (Android) {
+    document.body.classList.add('mobileTrue');
+    if(screen.availHeight > screen.availWidth){
+      alert("Please use Landscape!(CUZ IM TOO LAZY TO REPAIR THIS SHIT K?)");
+    }
+  }
+  
 }, 32);
 
 var isPlaying = false;
@@ -141,10 +148,6 @@ function formatSecondsAsTime(secs, format) {
   return min + ':' + sec;
 }
 
-
-if (Android) {
-  document.body.classList.add('mobileTrue');
-}
 
 function scrub(e){
   const scrubTime = (e.offsetX / document.getElementById('timeLine').offsetWidth ) * player.duration;
